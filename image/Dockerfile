@@ -1,7 +1,10 @@
 FROM quay.io/jupyter/minimal-notebook
 
 # Add RUN statements to install packages as the $NB_USER defined in the base images.
+RUN conda install -y -c conda-forge \
+		petsc4py
 
+RUN pip install jupytext==1.14.4 --user
 # Add a "USER root" statement followed by RUN statements to install system packages using apt-get,
 # change file permissions, etc.
 
