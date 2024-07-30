@@ -39,5 +39,6 @@ RUN pip install --no-cache-dir jupytext==1.14.4 \
 &&        fix-permissions "${CONDA_DIR}" \ 
 &&        fix-permissions "/home/${NB_USER}"
 
-# get some conda envrionment variables available for Underworld use
-COPY --chown=${NB_USER} --chmod=755 fix.sh /usr/local/bin/before-notebook.d/
+# copy in script to add conda env vars for Underworld use
+COPY --chown=${NB_USER} --chmod=755 fix_conda_dev_env_vars.sh /usr/local/bin/before-notebook.d/
+
