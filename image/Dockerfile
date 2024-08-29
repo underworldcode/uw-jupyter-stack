@@ -22,7 +22,7 @@ USER $NB_USER
 # Add RUN statements to install packages as the $NB_USER defined in the base images.
 RUN mamba install --yes -c conda-forge \
                            petsc4py    \
-                           jgiordani::underworld3==v0.98b \
+                           jgiordani::underworld3=v0.98b \
 #                           pyvista     \
 &&    mamba clean --all -f -y \
 &&    fix-permissions "${CONDA_DIR}" \
