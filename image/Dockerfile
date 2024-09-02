@@ -1,4 +1,3 @@
-#FROM quay.io/jupyter/base-notebook:python-3.11
 FROM ghcr.io/pyvista/pyvista:latest
 LABEL maintainer="julian.giordani@sydney.edu.au"
 
@@ -23,7 +22,6 @@ USER $NB_USER
 RUN mamba install --yes -c conda-forge \
                            petsc4py    \
                            jgiordani::underworld3 \
-#                           pyvista     \
 &&    mamba clean --all -f -y \
 &&    fix-permissions "${CONDA_DIR}" \
 &&    fix-permissions "/home/${NB_USER}"
