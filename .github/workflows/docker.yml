@@ -35,7 +35,7 @@ concurrency:
 
 jobs:
   build-test-publish-images:
-    runs-on: [ubuntu-latest, arm-droid]
+    runs-on: ubuntu-latest
     permissions:
       contents: write
 
